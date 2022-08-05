@@ -1,0 +1,33 @@
+@value makerWhite,bgColor from "../../res/color.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Gaegu-Light";
+}
+.container h1 {
+  font-family: "Gaegu-Bold";
+  font-size: 5rem;
+}
+.container p {
+  font-size: 2rem;
+}
+.container button {
+  margin-top: 5rem;
+  padding: 1rem;
+  font-size: 3rem;
+  color: makerWhite;
+  background-color: bgColor;
+  transition: all 0.1s;
+}
+.container button:hover {
+  transform: scale(1.1);
+}
+
+.characters img {
+  width: 10rem;
+  margin: 1rem;
+}

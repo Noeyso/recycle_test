@@ -1,0 +1,17 @@
+@value bgColor,makerWhite from "./res/color.css";
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: bgColor;
+}
+.contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100rem;
+  height: 50rem;
+  background: makerWhite;
+  border-radius: 5rem;
+}

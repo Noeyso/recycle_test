@@ -1,13 +1,41 @@
+html,
+body {
+  font-size: 62.5%;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@font-face {
+  font-family: "Gaegu-Bold";
+  src: url("./res/font/Gaegu-Bold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gaegu-Medium";
+  src: url("./res/font/Gaegu-Medium.otf");
+  font-weight: normal;
+  font-style: normal;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Gaegu-Light";
+  src: url("./res/font/Gaegu-Light.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: "Gaegu-Bold";
+  background: none;
+}
+p {
+  font-size: 1.6rem;
 }

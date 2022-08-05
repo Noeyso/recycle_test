@@ -1,0 +1,12 @@
+@value makerWhite,bgColor from "../../res/color.css";
+
+.button {
+  padding: 1rem;
+  font-size: 3rem;
+  color: makerWhite;
+  background-color: bgColor;
+  transition: all 0.1s;
+}
+.button:hover {
+  transform: scale(1.1);
+}

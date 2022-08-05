@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { characters } from "../../res/img/img";
+import { characters } from "../../res/img/character/img";
 import styles from "./Intro.module.css";
 const Intro: React.FC = () => {
   return (

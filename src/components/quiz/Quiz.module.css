@@ -1,27 +1,17 @@
-@value makerWhite,bgColor,makerRed from "../../res/color.css";
+@value makerRed from "../../res/color.css";
 
 .container {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Gaegu-Bold";
 }
-
 .name {
   font-size: 3.5rem;
 }
-.img_container {
-  width: 100%;
-  height: 25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .help {
-  width: 35%;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -29,14 +19,16 @@
   color: makerRed;
   font-family: "Gaegu-Medium";
 }
-.character {
+.help img {
   width: 4rem;
   margin-right: 0.3rem;
 }
 .trash_img {
-  width: 50%;
-  justify-content: flex-start;
+  height: 25rem;
+  display: flex;
+  align-items: center;
 }
+
 .trash_img img {
   width: 15rem;
   max-height: 20rem;
@@ -44,13 +36,4 @@
 }
 .bins {
   display: flex;
-}
-.bins div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 1.5rem;
-}
-.bins div img {
-  width: 100%;
 }

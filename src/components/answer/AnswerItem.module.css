@@ -1,0 +1,35 @@
+@value makerGreen,makerLightGreen from "../../res/color.css";
+
+.container {
+  padding: 1.5rem 2.5rem;
+}
+.top {
+  display: flex;
+  align-items: center;
+}
+.top span {
+  font-size: 2rem;
+  font-family: "Gaegu-Medium";
+}
+
+.top span:nth-child(2) {
+  margin-left: 2rem;
+  color: makerGreen;
+  font-family: "Gaegu-Bold";
+}
+.trash_can {
+  padding-bottom: 1rem;
+}
+.trash_can img {
+  width: 5rem;
+}
+.detail {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background-color: makerLightGreen;
+  border-radius: 0.5rem;
+}
+.detail p {
+  white-space: pre-wrap;
+  line-height: 3rem;
+}

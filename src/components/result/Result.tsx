@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Result.module.css";
 import { quizzes } from "../../res/data/quizzes";
 import Button from "../button/Button";
 import { AiFillHome } from "react-icons/ai";
+import { FaRegHandPointRight } from "react-icons/fa";
 import { result } from "../../res/data/result";
-
+import KakaoShareButton from "../KakaoShareButton/KakaoShareButton";
 const Result = () => {
   const location = useLocation();
   const len = quizzes.length;
@@ -13,6 +14,7 @@ const Result = () => {
   const score = state.score;
   const res = Math.trunc(((score / len) * 10) / 2);
   const { title, img, text } = result[res];
+
   return (
     <section className={styles.container}>
       <Link to="/">
@@ -25,11 +27,14 @@ const Result = () => {
       <h1>분리수거 {title}!</h1>
       <span>{text}</span>
       <section className={styles.buttons}>
-        <div>
-          <Button text="정답 보러가기" />
-        </div>
-        <div>
-          <Button text="공유하기" />
+        <Link to="/answer" className={styles.button}>
+          <Button>
+            <FaRegHandPointRight size="2rem" />
+            <span> 정답 보러가기</span>
+          </Button>
+        </Link>
+        <div className={styles.button}>
+          <KakaoShareButton />
         </div>
       </section>
     </section>

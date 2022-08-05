@@ -1,4 +1,4 @@
-import { characters } from "../img/img";
+import { characters } from "../img/character/img";
 
 export const result = [
   {
@@ -9,7 +9,7 @@ export const result = [
   {
     title: "초보자",
     img: characters[1],
-    text: "아직 많이 서툴지만 관심을 가지려는 당신은 정말 멋져요!! \n 앞으로 더 알아가고 더 실천해봐요! 아자아자!",
+    text: "아직 많이 서툴지만 관심을 가지려는 당신은 정말 멋져요!! 앞으로 더 알아가고 더 실천해봐요! 아자아자!",
   },
   {
     title: "중급자",

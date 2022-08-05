@@ -1,49 +1,37 @@
 import React, { useState } from "react";
 import styles from "./TrashCan.module.css";
-import TrashOpen from "../../res/img/trash-open.png";
-import TrashClose from "../../res/img/trash-close.png";
-import { imgType, type } from "../../res/data/classification";
+import { trashImgType, trashType } from "../../res/data/trash_type";
 
 const TrashCan: React.FC<{
   dropTrash: (ans: number) => void;
   trashCan: number;
 }> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const type = props.trashCan;
 
-  const allowDrop = (event: React.DragEvent<HTMLImageElement>) => {
+  const drag = (event: React.DragEvent<HTMLDivElement>, state: boolean) => {
     event.preventDefault();
-    setIsOpen(true);
+    setIsOpen(state);
   };
-
-  const allowLeave = (event: React.DragEvent<HTMLImageElement>) => {
-    event.preventDefault();
-    setIsOpen(false);
-  };
-
-  const dropHandler = (event: React.DragEvent<HTMLImageElement>) => {
-    event.preventDefault();
-    setIsOpen(false);
-    props.dropTrash(props.trashCan);
+  const dropHandler = (event: React.DragEvent<HTMLDivElement>) => {
+    drag(event, false);
+    props.dropTrash(type);
   };
   return (
     <div>
       <div
         className={styles.trashCan}
         draggable={false}
-        onDragOver={allowDrop}
-        onDragLeave={allowLeave}
+        onDragOver={(e) => drag(e, true)}
+        onDragLeave={(e) => drag(e, false)}
         onDrop={dropHandler}
       >
         <img
           draggable={false}
-          src={
-            isOpen
-              ? imgType[props.trashCan].open
-              : imgType[props.trashCan].close
-          }
+          src={isOpen ? trashImgType[type].open : trashImgType[type].close}
           alt="bin"
         />
-        <p>{type[props.trashCan]}</p>
+        <p>{trashType[type]}</p>
       </div>
     </div>
   );

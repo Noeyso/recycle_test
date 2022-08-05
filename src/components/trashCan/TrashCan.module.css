@@ -1,5 +1,9 @@
 .trashCan {
   width: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 4rem;
 }
 .trashCan img {
   width: 100%;

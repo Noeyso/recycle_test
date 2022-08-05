@@ -31,8 +31,13 @@
 }
 .buttons {
   display: flex;
-  margin-top: 3rem;
+  align-items: center;
+  margin-top: 5rem;
 }
-.buttons div {
-  margin: 1rem;
+.button {
+  margin: 0 2rem;
+}
+.button span {
+  font-size: 3rem;
+  font-family: "Gaegu-Bold";
 }

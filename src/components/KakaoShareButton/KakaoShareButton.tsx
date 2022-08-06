@@ -10,7 +10,7 @@ const KakaoShareButton = () => {
       }
 
       kakao.Link.sendScrap({
-        requestUrl: "https://noeyso.github.io/",
+        requestUrl: "https://noeyso.github.io/recycle_test",
         templateId: 80934,
       });
     }

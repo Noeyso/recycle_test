@@ -6,7 +6,6 @@ import { AiFillHome } from "react-icons/ai";
 import { FaRegHandPointRight } from "react-icons/fa";
 import { result } from "../../res/data/result";
 import KakaoShareButton from "../KakaoShareButton/KakaoShareButton";
-import { useEffect } from "react";
 const Result = () => {
   const location = useLocation();
   const len = quizzes.length;

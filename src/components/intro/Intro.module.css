@@ -15,19 +15,14 @@
 .container p {
   font-size: 2rem;
 }
-.container button {
-  margin-top: 5rem;
-  padding: 1rem;
-  font-size: 3rem;
-  color: makerWhite;
-  background-color: bgColor;
-  transition: all 0.1s;
-}
-.container button:hover {
-  transform: scale(1.1);
-}
 
 .characters img {
-  width: 10rem;
+  width: 10%;
   margin: 1rem;
+}
+
+.characters {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
 }

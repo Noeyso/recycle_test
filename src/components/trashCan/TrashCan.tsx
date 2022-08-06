@@ -18,21 +18,19 @@ const TrashCan: React.FC<{
     props.dropTrash(type);
   };
   return (
-    <div>
-      <div
-        className={styles.trashCan}
+    <div
+      className={styles.trashCan}
+      draggable={false}
+      onDragOver={(e) => drag(e, true)}
+      onDragLeave={(e) => drag(e, false)}
+      onDrop={dropHandler}
+    >
+      <img
         draggable={false}
-        onDragOver={(e) => drag(e, true)}
-        onDragLeave={(e) => drag(e, false)}
-        onDrop={dropHandler}
-      >
-        <img
-          draggable={false}
-          src={isOpen ? trashImgType[type].open : trashImgType[type].close}
-          alt="bin"
-        />
-        <p>{trashType[type]}</p>
-      </div>
+        src={isOpen ? trashImgType[type].open : trashImgType[type].close}
+        alt="bin"
+      />
+      <span>{trashType[type]}</span>
     </div>
   );
 };

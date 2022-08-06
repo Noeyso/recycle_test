@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Quiz.module.css";
 import { useNavigate } from "react-router-dom";
 import Throw from "../../res/img/trash.png";
 import TrashCan from "../trashCan/TrashCan";
 import ProgressBar from "../progressBar/ProgressBar";
 import { quizzes } from "../../res/data/quizzes";
-import { characters } from "../../res/img/character/img";
+import { RiDragDropLine } from "react-icons/ri";
 
 const Quiz = () => {
   const navigate = useNavigate();
@@ -13,8 +13,6 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   let img = new Image(10, 10);
   img.src = Throw;
-
-  const character = characters[Math.floor(Math.random() * 5)];
 
   const goNextStep = (ans: number) => {
     if (quizzes[step].answer === ans) {
@@ -30,10 +28,12 @@ const Quiz = () => {
   };
   return (
     <section className={styles.container}>
-      <ProgressBar step={step} />
+      <div className={styles.progress_bar}>
+        <ProgressBar step={step} />
+      </div>
       <h1 className={styles.name}>{quizzes[step].name}</h1>
       <section className={styles.help}>
-        <img src={character} alt="character" />
+        <RiDragDropLine />
         <span>드래그해서 버려주세요!</span>
       </section>
       <section className={styles.trash_img}>

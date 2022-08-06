@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Result.module.css";
 import { quizzes } from "../../res/data/quizzes";

@@ -1,15 +1,15 @@
-@value makerBlue from "../../res/color.css";
+@value bgColor from "../../res/color.css";
 .gauge_container {
-  width: 40rem;
+  width: 100%;
   height: 1rem;
-  border: 1px solid makerBlue;
+  border: 0.1rem solid bgColor;
 }
 .step {
   letter-spacing: 0.5rem;
   font-family: "Gaegu-Medium";
 }
 .gauge {
-  background-color: makerBlue;
+  background-color: bgColor;
   height: 100%;
   transition: width 1s;
 }

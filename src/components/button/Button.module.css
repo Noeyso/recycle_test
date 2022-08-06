@@ -1,4 +1,4 @@
-@value makerWhite,bgColor from "../../res/color.css";
+@value makerWhite,bgColor,makerLightYellow from "../../res/color.css";
 
 .button {
   padding: 1rem;
@@ -9,4 +9,5 @@
 }
 .button:hover {
   transform: scale(1.1);
+  color: makerLightYellow;
 }

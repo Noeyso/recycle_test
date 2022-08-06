@@ -7,18 +7,18 @@
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
+  padding: 10%;
   position: relative;
 }
 .btn_home {
-  top: 0;
-  right: 10rem;
+  top: 10%;
+  right: 10%;
   position: absolute;
   color: bgColor;
 }
 .container img {
   width: 20rem;
 }
-
 .container h1 {
   font-size: 4rem;
   font-family: "Gaegu-Bold";
@@ -30,14 +30,26 @@
   line-height: 3rem;
 }
 .buttons {
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 5%;
 }
 .button {
-  margin: 0 2rem;
+  margin: 0 2%;
 }
 .button span {
-  font-size: 3rem;
+  font-size: 100%;
   font-family: "Gaegu-Bold";
+}
+
+@media (max-width: 960px) {
+  .buttons {
+    flex-direction: column;
+  }
+
+  .button {
+    margin: 2% 0;
+  }
 }

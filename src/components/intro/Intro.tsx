@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { characters } from "../../res/img/character/img";
+import Button from "../button/Button";
 import styles from "./Intro.module.css";
 const Intro: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const Intro: React.FC = () => {
         ))}
       </div>
       <Link to="/quiz">
-        <button>테스트 시작!</button>
+        <Button>테스트 시작!</Button>
       </Link>
     </div>
   );

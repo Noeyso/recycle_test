@@ -15,17 +15,6 @@ const Result = () => {
   const res = Math.trunc(((score / len) * 10) / 2);
   const { title, img, text } = result[res];
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <section className={styles.container}>
       <Link to="/">

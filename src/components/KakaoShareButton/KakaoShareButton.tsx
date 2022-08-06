@@ -1,6 +1,8 @@
 import Button from "../button/Button";
 import { RiKakaoTalkFill } from "react-icons/ri";
 const KakaoShareButton = () => {
+
+
   const createKakaoButton = () => {
     if (window.Kakao) {
       const kakao = window.Kakao;
@@ -10,7 +12,7 @@ const KakaoShareButton = () => {
       }
 
       kakao.Link.sendScrap({
-        requestUrl: "https://noeyso.github.io/recycle_test",
+        requestUrl: "https://noeyso.github.io/recycle_test/",
         templateId: 80934,
       });
     }

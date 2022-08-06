@@ -6,6 +6,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FaRegHandPointRight } from "react-icons/fa";
 import { result } from "../../res/data/result";
 import KakaoShareButton from "../KakaoShareButton/KakaoShareButton";
+import { useEffect } from "react";
 const Result = () => {
   const location = useLocation();
   const len = quizzes.length;
@@ -13,6 +14,17 @@ const Result = () => {
   const score = state.score;
   const res = Math.trunc(((score / len) * 10) / 2);
   const { title, img, text } = result[res];
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <section className={styles.container}>

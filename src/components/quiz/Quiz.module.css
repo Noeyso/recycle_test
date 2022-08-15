@@ -1,8 +1,6 @@
 @value makerRed from "../../res/color.css";
 
 .container {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,9 +25,19 @@
 .help span {
   margin-left: 0.3rem;
 }
+.test_text {
+  font-size: 2rem;
+}
+.throw_img {
+  display: none;
+  position: absolute;
+  transform: translate(-70%, -50%);
+  z-index: 1;
+}
 .trash_img {
   width: 50%;
-  height: 40%;
+  height: 30%;
+  min-height: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +54,13 @@
   object-fit: contain;
   cursor: pointer;
 }
+
 .bins {
   display: flex;
   justify-content: center;
+  height: 15%;
+}
+
+.bins div {
+  margin: 0 8%;
 }

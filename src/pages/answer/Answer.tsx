@@ -6,12 +6,12 @@ import { IoChevronBackOutline } from "react-icons/io5";
 
 const Answer = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.answer_container}>
       <button onClick={() => window.history.back()}>
         <IoChevronBackOutline size="4rem" />
       </button>
       <h1>정답</h1>
-      <section className={styles.answers}>
+      <section className={styles.answer_container__list}>
         {quizzes.map((quiz, idx) => (
           <AnswerItem idx={idx} trash={quiz} />
         ))}

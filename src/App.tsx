@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styles from "./App.module.css";
-import Answer from "./components/answer/Answer";
-import Intro from "./components/intro/Intro";
-import Quiz from "./components/quiz/Quiz";
-import Result from "./components/result/Result";
+import Answer from "./pages/answer/Answer";
+import Intro from "./pages/intro/Intro";
+import Quiz from "./pages/quiz/Quiz";
+import Result from "./pages/result/Result";
 
 function App() {
   return (

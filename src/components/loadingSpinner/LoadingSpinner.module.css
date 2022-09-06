@@ -1,0 +1,104 @@
+@value bgColor from "../../res/color.css";
+
+@keyframes ldio {
+  0% {
+    opacity: 1;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.5, 1.5);
+  }
+  100% {
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1, 1);
+  }
+}
+.ldio div > div {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: bgColor;
+  animation: ldio 1s linear infinite;
+}
+.ldio div:nth-child(1) > div {
+  left: 14.8rem;
+  top: 8.8rem;
+  animation-delay: -0.875s;
+}
+.ldio > div:nth-child(1) {
+  transform: rotate(0deg);
+  transform-origin: 16rem 10rem;
+}
+.ldio div:nth-child(2) > div {
+  left: 13rem;
+  top: 13rem;
+  animation-delay: -0.75s;
+}
+.ldio > div:nth-child(2) {
+  transform: rotate(45deg);
+  transform-origin: 14.2rem 14.2rem;
+}
+.ldio div:nth-child(3) > div {
+  left: 8.8rem;
+  top: 14.8rem;
+  animation-delay: -0.625s;
+}
+.ldio > div:nth-child(3) {
+  transform: rotate(90deg);
+  transform-origin: 10rem 16rem;
+}
+.ldio div:nth-child(4) > div {
+  left: 4.6rem;
+  top: 13rem;
+  animation-delay: -0.5s;
+}
+.ldio > div:nth-child(4) {
+  transform: rotate(135deg);
+  transform-origin: 5.8rem 14.2rem;
+}
+.ldio div:nth-child(5) > div {
+  left: 2.8rem;
+  top: 8.8rem;
+  animation-delay: -0.375s;
+}
+.ldio > div:nth-child(5) {
+  transform: rotate(180deg);
+  transform-origin: 4rem 10rem;
+}
+.ldio div:nth-child(6) > div {
+  left: 4.6rem;
+  top: 4.6rem;
+  animation-delay: -0.25s;
+}
+.ldio > div:nth-child(6) {
+  transform: rotate(225deg);
+  transform-origin: 5.8rem 5.8rem;
+}
+.ldio div:nth-child(7) > div {
+  left: 8.8rem;
+  top: 2.8rem;
+  animation-delay: -0.125s;
+}
+.ldio > div:nth-child(7) {
+  transform: rotate(270deg);
+  transform-origin: 10rem 4rem;
+}
+.ldio div:nth-child(8) > div {
+  left: 13rem;
+  top: 4.6rem;
+  animation-delay: 0s;
+}
+.ldio > div:nth-child(8) {
+  transform: rotate(315deg);
+  transform-origin: 14.2rem 5.8rem;
+}
+.loadingio {
+  width: 20rem;
+  height: 20rem;
+}
+.ldio {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+}

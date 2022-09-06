@@ -1,15 +1,16 @@
-.container {
-  width: 100%;
-  height: 100%;
+.trash_can {
+  width: 10rem;
+  height: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.container img {
+.trash_can img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 1/1;
 }
-.container span {
+.trash_can span {
   margin-top: 1rem;
   font-size: 1.5rem;
 }

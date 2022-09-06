@@ -1,35 +1,44 @@
 @value makerGreen,makerLightGreen from "../../res/color.css";
 
-.container {
+.answer_item_container {
   padding: 1.5rem 2.5rem;
 }
-.top {
+.answer_item_container__top {
   display: flex;
   align-items: center;
 }
-.top span {
+.answer_item_container__top span {
   font-size: 2rem;
   font-family: "Gaegu-Medium";
 }
-
-.top span:nth-child(2) {
+.answer_item_container__trash_can {
+  display: flex;
+  align-items: center;
+}
+.answer_item_container__trash_can span {
   margin-left: 2rem;
   color: makerGreen;
   font-family: "Gaegu-Bold";
 }
-.trash_can {
+.answer_item_container__trash_can div {
   padding-bottom: 1rem;
 }
-.trash_can img {
+.answer_item_container__trash_can img {
   width: 5rem;
 }
-.detail {
+.answer_item_container__detail {
   margin-top: 1rem;
   padding: 1rem 2rem;
   background-color: makerLightGreen;
   border-radius: 0.5rem;
 }
-.detail p {
+.answer_item_container__detail p {
   white-space: pre-wrap;
   line-height: 3rem;
+}
+
+@media (max-width: 960px) {
+  .answer_item_container__top {
+    flex-direction: column;
+  }
 }

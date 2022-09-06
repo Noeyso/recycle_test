@@ -1,14 +1,14 @@
 @value bgColor from "../../res/color.css";
 
-.container {
-  width: 100%;
+.result_container {
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
-  padding: 10%;
   position: relative;
+  padding: 0 10%;
+  font-family: "Gaegu-Bold";
 }
 .btn_home {
   top: 10%;
@@ -16,40 +16,39 @@
   position: absolute;
   color: bgColor;
 }
-.container img {
-  width: 20rem;
+.result_container img {
+  width: 25%;
 }
-.container h1 {
+.result_container h1 {
   font-size: 4rem;
-  font-family: "Gaegu-Bold";
 }
-.container span {
+.result_container span {
   font-size: 2rem;
   font-family: "Gaegu-Medium";
   white-space: pre-wrap;
   line-height: 3rem;
 }
-.buttons {
+.result_container__buttons {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5%;
 }
-.button {
+.result_container__button {
   margin: 0 2%;
 }
-.button span {
+.result_container__button span {
   font-size: 100%;
   font-family: "Gaegu-Bold";
 }
 
 @media (max-width: 960px) {
-  .buttons {
+  .result_container__buttons {
     flex-direction: column;
   }
 
-  .button {
+  .result_container__button {
     margin: 2% 0;
   }
 }

@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Quiz.module.css";
 import { useNavigate } from "react-router-dom";
 import Throw from "../../res/img/trash.png";
-import TrashCan from "../trashCan/TrashCan";
-import ProgressBar from "../progressBar/ProgressBar";
+import TrashCan from "../../components/trashCan/TrashCan";
+import ProgressBar from "../../components/progressBar/ProgressBar";
 import { quizzes } from "../../res/data/quizzes";
 import { RiDragDropLine } from "react-icons/ri";
 
@@ -24,8 +24,10 @@ const Quiz = () => {
 
   const [bin1State, setBin1State] = useState(false);
   const [bin2State, setBin2State] = useState(false);
-  const [throwBin1, setThrowBin1] = useState(false);
-  const [throwBin2, setThrowBin2] = useState(false);
+
+  const bin1 = useRef<HTMLDivElement>(null);
+  const bin2 = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLElement>(null);
 
   const [bin1Pos, setBin1Pos] = useState<POS_TYPE>({ x: 0, y: 0 });
   const [bin2Pos, setBin2Pos] = useState<POS_TYPE>({ x: 0, y: 0 });
@@ -34,29 +36,16 @@ const Quiz = () => {
     h: 0,
   });
 
-  const bin1 = useRef<HTMLDivElement>(null);
-  const bin2 = useRef<HTMLDivElement>(null);
-
-  const container = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    let b1 = bin1.current?.getBoundingClientRect();
-    let b2 = bin2.current?.getBoundingClientRect();
-    let containerSize = container.current?.getBoundingClientRect();
-
-    let offSetX = containerSize!.x * (8 / 100);
-    setBin1Pos({ x: b1!.x - offSetX, y: b1!.top });
-    setBin2Pos({ x: b2!.x - offSetX, y: b2!.top });
-    setBinSize({ w: b1!.width, h: b2!.height });
-  }, [bin1Pos, throwBin1, throwBin2]);
-
-  useEffect(() => {
-    setThrowBin1(false);
-    setThrowBin2(false);
-    console.log(` *** bin1 X : ${bin1Pos.x}, Y : ${bin1Pos.y}`);
-    console.log(` *** bin2 X : ${bin2Pos.x}, Y : ${bin2Pos.y}`);
-    console.log(` *** bin Width : ${binSize.w}, Height : ${binSize.h}`);
-  }, [bin1Pos, throwBin1, throwBin2]);
+    const b1 = bin1.current?.getBoundingClientRect();
+    const b2 = bin2.current?.getBoundingClientRect();
+    setBin1Pos({ x: b1!.x, y: b1!.top });
+    setBin2Pos({ x: b2!.x, y: b2!.top });
+    setBinSize({
+      w: b1!.width,
+      h: b1!.height,
+    });
+  }, [isTouch]);
 
   const goNextStep = (ans: number) => {
     if (quizzes[step].answer === ans) {
@@ -68,12 +57,17 @@ const Quiz = () => {
     }
   };
   const startDrag = (event: React.DragEvent) => {
-    console.log("드래그시작ㄴ");
     event.dataTransfer.setDragImage(img, 100, 20);
   };
 
   const onTouchStart = (event: React.TouchEvent) => {
     setIsTouch(true);
+    const movedX = event.changedTouches[0].clientX;
+    const movedY = event.changedTouches[0].clientY;
+    setPosition({
+      x: movedX,
+      y: movedY,
+    });
   };
 
   const checkIsInside = (x: number, y: number, binPos: POS_TYPE) => {
@@ -110,44 +104,25 @@ const Quiz = () => {
     setIsTouch(false);
     if (checkIsInside(movedX, movedY, bin1Pos)) {
       setBin1State(false);
-      setThrowBin1(true);
+      goNextStep(quizzes[step].can1);
     } else if (checkIsInside(movedX, movedY, bin2Pos)) {
       setBin2State(false);
-      setThrowBin2(true);
+      goNextStep(quizzes[step].can2);
     }
   };
 
   return (
-    <section className={styles.container} ref={container}>
+    <section className={styles.quiz_container} ref={container}>
       <div className={styles.progress_bar}>
         <ProgressBar step={step} />
       </div>
-      <h1 className={styles.name}>{quizzes[step].name}</h1>
-      <section
-        className={styles.help}
-        draggable={false}
-        onDrop={() => {
-          console.log("drag drop");
-        }}
-      >
+      <h1>{quizzes[step].name}</h1>
+      <section className={styles.quiz_container__text}>
         <RiDragDropLine />
         <span>드래그해서 버려주세요!</span>
       </section>
-      <span>
-        drag position x : {position.x} , y : {position.y}
-      </span>
-      <span>
-        bin1 X : {bin1Pos.x}, Y : {bin1Pos.y}
-      </span>
-      <span>
-        bin2 X : {bin2Pos.x}, Y : {bin2Pos.y}
-      </span>
-      <span>
-        bin Width : {binSize.w}, Height : {binSize.h}
-      </span>
-
       <img
-        className={styles.throw_img}
+        className={styles.quiz_container__img_trash}
         style={{
           display: isTouch ? "block" : "none",
           top: position.y,
@@ -156,7 +131,8 @@ const Quiz = () => {
         src={Throw}
         alt="throw"
       />
-      <section className={styles.trash_img}>
+
+      <section className={styles.quiz_container__img}>
         <img
           src={quizzes[step].img}
           draggable={true}
@@ -167,13 +143,12 @@ const Quiz = () => {
           alt="trash"
         />
       </section>
-      <section className={styles.bins}>
+      <section className={styles.quiz_container__bins}>
         <div ref={bin1}>
           <TrashCan
             dropTrash={goNextStep}
             trashCan={quizzes[step].can1}
             state={bin1State}
-            isThrow={throwBin1}
           />
         </div>
         <div ref={bin2}>
@@ -181,7 +156,6 @@ const Quiz = () => {
             dropTrash={goNextStep}
             trashCan={quizzes[step].can2}
             state={bin2State}
-            isThrow={throwBin2}
           />
         </div>
       </section>

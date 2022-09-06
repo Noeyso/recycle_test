@@ -1,11 +1,11 @@
 @value makerWhite,bgColor from "../../res/color.css";
 
 .container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   font-family: "Gaegu-Light";
 }
 .container h1 {

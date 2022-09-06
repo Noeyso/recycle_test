@@ -5,6 +5,7 @@
   font-size: 3rem;
   color: makerWhite;
   background-color: bgColor;
+  font-family: "Gaegu-Bold";
   transition: all 0.1s;
 }
 .button:hover {
